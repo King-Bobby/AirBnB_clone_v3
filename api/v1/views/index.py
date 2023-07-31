@@ -19,8 +19,8 @@ def numofobjects_by_type():
     classes = {
             "Amenity": storage.count(Amenity),
             "Cities": storage.count(City),
-            "Places": storage.count(Places),
-            "Reviews": storage.count(Reviews),
+            "Places": storage.count(Place),
+            "Reviews": storage.count(Review),
             "States": storage.count(State),
             "Users": storage.count(User)
         }
