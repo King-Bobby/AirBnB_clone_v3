@@ -7,7 +7,7 @@ This contains the Module states.py
 from app.v1.views import app_views
 from models import storage
 from models.state import State
-from flask import jsonify, request, abort
+from flask import Flask, jsonify, request, abort
 
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)

@@ -4,7 +4,7 @@ This contains the module cities.py
 """
 
 
-from flask import jsonify, request, abort
+from flask import Flask, jsonify, request, abort
 from models import storage
 from models.city import City
 from api.v1.views import app_views
