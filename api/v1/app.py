@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Testing documentation of a module
+"""This module contains the Flask application for the Airbnb Clone API
 """
 
 
-from flask import Flask, make_response, jsonify
 from models import storage
+from flask import Flask, make_response, jsonify
 from api.v1.views import app_views
 from os import getenv
 from flask_cors import CORS
