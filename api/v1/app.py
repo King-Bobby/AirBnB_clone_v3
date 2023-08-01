@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""this module contains the Flask application for the Airbnb Clone API"""
+"""Testing documentation of a module
+"""
 
 
 from flask import Flask, make_response, jsonify
