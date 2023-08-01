@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """
-This contains the Module app.py
+app.py - Flask Application for the Airbnb Clone API
+
+This module contains the Flask application that serves as the backend for the Airbnb Clone API.
+It registers the blueprint `app_views` from the `api.v1.views` package to handle API routes.
+The application uses the `models.storage` module to interact with the database and retrieve data.
 """
 
 
