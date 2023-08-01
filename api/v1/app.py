@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-"""
-app.py - Flask Application for the Airbnb Clone API
-
-This module contains the Flask application that serves as the backend for the Airbnb Clone API.
-It registers the blueprint `app_views` from the `api.v1.views` package to handle API routes.
-The application uses the `models.storage` module to interact with the database and retrieve data.
-"""
+'''
+    app for registering blueprint and starting flask
+'''
 
 
 from flask import Flask, make_response, jsonify
