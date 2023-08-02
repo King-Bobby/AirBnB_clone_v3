@@ -15,7 +15,7 @@ CORS(app, origins="0.0.0.0")
 app.register_blueprint(app_views)
 
 
-@app.teardown.appcontext
+@app.teardown_appcontext
 def tear_down(exception):
     """after each session, close query"""
     storage.close()
