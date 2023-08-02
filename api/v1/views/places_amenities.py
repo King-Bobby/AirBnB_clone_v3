@@ -15,7 +15,7 @@ from models.amenity import Amenity
                  methods=['GET'], strict_slashes=False)
 def get_amenities_by_place(place_id):
     """Retrieves the list of all Amenity objects of a Place"""
-    place = storage.get(Place, place_id)
+    place = storage.get("Place", place_id)
     if not place:
         abort(404)
     amenities = place.amenities
@@ -26,8 +26,8 @@ def get_amenities_by_place(place_id):
                  methods=['DELETE'], strict_slashes=False)
 def delete_amenity_from_place(place_id, amenity_id):
     """Deletes an Amenity object from a Place"""
-    place = storage.get(Place, place_id)
-    amenity = storage.get(Amenity, amenity_id)
+    place = storage.get("Place", place_id)
+    amenity = storage.get("Amenity", amenity_id)
     if not place or not amenity:
         abort(404)
     if amenity not in place.amenities:
@@ -41,8 +41,8 @@ def delete_amenity_from_place(place_id, amenity_id):
                  methods=['POST'], strict_slashes=False)
 def link_amenity_to_place(place_id, amenity_id):
     """Links an Amenity object to a Place"""
-    place = storage.get(Place, place_id)
-    amenity = storage.get(Amenity, amenity_id)
+    place = storage.get("Place", place_id)
+    amenity = storage.get("Amenity", amenity_id)
     if not place or not amenity:
         abort(404)
     if amenity in place.amenities:

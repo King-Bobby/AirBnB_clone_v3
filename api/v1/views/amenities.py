@@ -13,7 +13,7 @@ from models import storage
 @app_views.route('/amenities', methods=['GET'], strict_slashes=False)
 def get_all_amenity_objects():
     """Retrieves the list of all Amenity objects"""
-    amenities = storage.all(Amenity).values()
+    amenities = storage.all("Amenity").values()
     return jsonify([amenity.to_dict() for amenity in amenities])
 
 
@@ -22,7 +22,7 @@ def get_all_amenity_objects():
                  strict_slashes=False)
 def get_one_amenity_object(amenity_id):
     """Retrieves a Amenity object"""
-    amenity = storage.get(Amenity, amenity_id)
+    amenity = storage.get("Amenity", amenity_id)
     if not amenity:
         abort(404)
     return jsonify(amenity.to_dict())
@@ -33,7 +33,7 @@ def get_one_amenity_object(amenity_id):
                  strict_slashes=False)
 def delete_amenity_object(amenity_id):
     """Deletes a Amenity object"""
-    amenity = storage.get(Amenity, amenity_id)
+    amenity = storage.get("Amenity", amenity_id)
     if not amenity:
         abort(404)
     amenity.delete()
@@ -59,7 +59,7 @@ def create_amenity_object():
                  strict_slashes=False)
 def update_amenity_object(amenity_id):
     """Updates a Amenity object"""
-    amenity = storage.get(Amenity, amenity_id)
+    amenity = storage.get("Amenity", amenity_id)
     if not amenity:
         abort(404)
     req_json = request.get_json()
