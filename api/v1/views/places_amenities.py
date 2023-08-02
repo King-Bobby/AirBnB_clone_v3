@@ -4,11 +4,11 @@ This module contains the view for the link between
 Place objects and Amenity objects
 """
 
+from api.v1.views import app_views
 from flask import Flask, jsonify, request, abort
 from models import storage
 from models.place import Place
 from models.amenity import Amenity
-from api.v1.views import app_views
 
 
 @app_views.route('places/<place_id>/amenities',

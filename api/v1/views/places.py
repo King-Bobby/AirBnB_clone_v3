@@ -3,8 +3,8 @@
 """
 
 
-from flask import Flask, jsonify, request, abort
 from api.v1.views import app_views
+from flask import Flask, jsonify, request, abort
 from models import storage
 from models.place import Place
 from models.city import City
@@ -64,7 +64,7 @@ def create_place(city_id):
         abort(404)
     if 'name' not in req_json:
         abort(400, 'Missing name')
-    new_place = (**req_json)
+    new_place = Place(**req_json)
     new_place.save()
     return jsonify(new_place.to_dict()), 201
 

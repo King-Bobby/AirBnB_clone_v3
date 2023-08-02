@@ -6,8 +6,8 @@ The application uses the `models.storage` module to interact with the database a
 """
 
 
-from flask import jsonify
 from api.v1.views import app_views
+from flask import jsonify
 from models import storage
 
 

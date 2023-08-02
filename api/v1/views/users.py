@@ -46,7 +46,7 @@ def create_user():
         abort(400, 'Missing email')
     if 'password' not in req_json:
         abort(400, 'Missing password')
-    new_user = (**req_json)
+    new_user = User(**req_json)
     new_user.save()
     return jsonify(new_user.to_dict()), 201
 

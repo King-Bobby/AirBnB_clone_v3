@@ -4,8 +4,8 @@ view for Review object that handles all default RESTFul API actions
 """
 
 
-from flask import Flask, jsonify, request, abort
 from api.v1.views import app_views
+from flask import Flask, jsonify, request, abort
 from models import storage
 from models.review import Review
 from models.place import Place
@@ -59,7 +59,7 @@ def create_review(place_id):
         abort(404)
     if 'text' not in req_json:
         abort(400, 'Missing text')
-    new_review = (**req_json)
+    new_review = Review(**req_json)
     new_review.save()
     return jsonify(new_review.to_dict()), 201
 

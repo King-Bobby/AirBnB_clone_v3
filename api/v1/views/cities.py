@@ -4,10 +4,10 @@ This contains the module cities.py
 """
 
 
+from api.v1.views import app_views
 from flask import Flask, jsonify, request, abort
 from models import storage
 from models.city import City
-from api.v1.views import app_views
 from models.state import State
 
 
@@ -54,7 +54,7 @@ def create_city(state_id):
         abort(404, 'Not a JSON')
     if 'name' not in req_json:
         abort(404, 'Missing name')
-    new_city = (**req_json)
+    new_city = City(**req_json)
     new_city.state_id = state_id
     new_city.save()
     return jsonify(new_city.to_dict()), 201

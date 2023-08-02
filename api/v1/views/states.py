@@ -5,9 +5,9 @@ This contains the Module states.py
 
 
 from app.v1.views import app_views
+from flask import Flask, jsonify, request, abort
 from models import storage
 from models.state import State
-from flask import Flask, jsonify, request, abort
 
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
@@ -47,7 +47,7 @@ def create_state():
         abort(400, 'Not a JSON')
     if 'name' not in req_json:
         abort(400, 'Missing name')
-    new_state = (**req_json)
+    new_state = State(**req_json)
     new_state.save()
     return jsonify(new_state.to_dict()), 201
 

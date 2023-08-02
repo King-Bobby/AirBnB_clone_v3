@@ -4,8 +4,8 @@ This is the amenity module
 """
 
 
-from flask import Flask, jsonify, request, abort
 from api.v1.views import app_views
+from flask import Flask, jsonify, request, abort
 from models.amenity import Amenity
 from models import storage
 
@@ -49,7 +49,7 @@ def create_amenity_object():
         abort(400, 'Not a JSON')
     if 'name' not in req_json:
         abort(400, 'Missing name')
-    new_amenity = (**req_json)
+    new_amenity = Amenity(**req_json)
     new_amenity.save()
     return jsonify(mew_amenity.to_dict()), 201
 
