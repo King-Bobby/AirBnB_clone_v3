@@ -16,7 +16,7 @@ app.register_blueprint(app_views)
 
 
 @app.teardown_appcontext
-def tear_down(exception):
+def tear_down(self):
     """after each session, close query"""
     storage.close()
 
@@ -29,6 +29,6 @@ def notfound(error):
 
 if __name__ == "__main__":
     host = getenv("HBNB_API_HOST", "0.0.0.0")
-    port = int(getenv("HBNB_API_PORT", "5050"))
+    port = int(getenv("HBNB_API_PORT", 5000))
 
     app.run(host=host, port=port, threaded=true)
