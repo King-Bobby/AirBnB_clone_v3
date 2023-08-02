@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
 This module contains the file index.py.
-It registers the blueprint `app_views` from the `api.v1.views` package to handle API routes.
-The application uses the `models.storage` module to interact with the database and retrieve data
 """
 
 
