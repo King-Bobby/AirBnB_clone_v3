@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains the Flask application for the Airbnb Clone API
+"""This module contains the Flask application for the Airbnb Clone API.
 """
 
 
