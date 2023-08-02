@@ -7,7 +7,7 @@ from api.v1.views import app_views
 from flask import Flask, make_response, jsonify
 from flask_cors import CORS
 from models import storage
-from os import getenv
+import os
 
 
 app = Flask(__name__)
@@ -28,7 +28,7 @@ def notfound(error):
 
 
 if __name__ == "__main__":
-    host = getenv("HBNB_API_HOST", "0.0.0.0")
-    port = int(getenv("HBNB_API_PORT", 5000))
+    host = os.environ.get("HBNB_API_HOST", "0.0.0.0")
+    port = int(os.environ.get("HBNB_API_PORT", 5000))
 
     app.run(host=host, port=port, threaded=true)
